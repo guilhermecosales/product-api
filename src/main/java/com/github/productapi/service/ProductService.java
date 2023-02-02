@@ -39,6 +39,10 @@ public class ProductService {
         return new ProductResponse(entityProduct);
     }
 
+    public void deleteById(String productId) {
+        productRepository.deleteById(productId);
+    }
+
     private void fromRequestToEntity(ProductRequest productRequest, Product product) {
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
