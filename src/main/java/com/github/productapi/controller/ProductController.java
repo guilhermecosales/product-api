@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @DeleteMapping(path = "/{productId}")
-    public ResponseEntity<ProductResponse> deleteById(@PathVariable(name = "productId") String productId) {
+    public ResponseEntity<Void> deleteById(@PathVariable(name = "productId") String productId) {
         productService.deleteById(productId);
         return ResponseEntity.noContent().build();
     }
