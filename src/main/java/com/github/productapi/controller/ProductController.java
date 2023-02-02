@@ -1,8 +1,8 @@
-package com.github.productapi.entity.controller;
+package com.github.productapi.controller;
 
 import com.github.productapi.entity.request.ProductRequest;
 import com.github.productapi.entity.response.ProductResponse;
-import com.github.productapi.entity.service.ProductService;
+import com.github.productapi.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

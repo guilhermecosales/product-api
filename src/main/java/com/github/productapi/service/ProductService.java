@@ -1,4 +1,4 @@
-package com.github.productapi.entity.service;
+package com.github.productapi.service;
 
 import com.github.productapi.entity.Product;
 import com.github.productapi.entity.request.ProductRequest;
