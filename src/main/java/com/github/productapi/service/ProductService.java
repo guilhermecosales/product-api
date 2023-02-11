@@ -47,6 +47,7 @@ public class ProductService {
     private void fromRequestToEntity(ProductRequest productRequest, Product product) {
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
+        product.getTags().addAll(productRequest.getTags());
     }
 
 }
