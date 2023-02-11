@@ -19,12 +19,14 @@ public class ProductResponse {
     private String name;
     private String description;
     private List<String> tags = new ArrayList<>();
+    private CategoryResponse category;
 
     public ProductResponse(Product product) {
         this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
         this.tags.addAll(product.getTags());
+        this.category = new CategoryResponse(product.getCategory());
     }
 
 }

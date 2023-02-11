@@ -1,23 +1,18 @@
 package com.github.productapi.entity.request;
 
-import com.github.productapi.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductRequest {
+public class CategoryProductRequest {
 
+    private String id;
     private String name;
     private String description;
-    private List<String> tags = new ArrayList<>();
-    private CategoryProductRequest category;
 
 }

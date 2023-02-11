@@ -1,5 +1,6 @@
 package com.github.productapi.service;
 
+import com.github.productapi.entity.Category;
 import com.github.productapi.entity.Product;
 import com.github.productapi.entity.request.ProductRequest;
 import com.github.productapi.entity.response.ProductResponse;
@@ -22,7 +23,7 @@ public class ProductService {
     public ProductResponse save(ProductRequest productRequest) {
         Product product = new Product();
         fromRequestToEntity(productRequest, product);
-        productRepository.save(product);
+        product = productRepository.save(product);
         return new ProductResponse(product);
     }
 
@@ -48,6 +49,10 @@ public class ProductService {
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
         product.getTags().addAll(productRequest.getTags());
+
+        Category category = new Category();
+        category.setId(productRequest.getCategory().getId());
+        product.setCategory(category);
     }
 
 }
