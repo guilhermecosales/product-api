@@ -4,6 +4,7 @@ import com.github.productapi.entity.Product;
 import com.github.productapi.entity.request.ProductRequest;
 import com.github.productapi.entity.response.ProductResponse;
 import com.github.productapi.repository.ProductRepository;
+import com.github.productapi.service.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,7 +36,7 @@ public class ProductService {
     public ProductResponse findById(String productId) {
         Optional<Product> optionalProduct = productRepository.findById(productId);
         Product entityProduct = optionalProduct.orElseThrow(
-                () -> new RuntimeException("Product with id " + productId + " not found"));
+                () -> new NotFoundException("Product with id " + productId + " not found"));
         return new ProductResponse(entityProduct);
     }
 
